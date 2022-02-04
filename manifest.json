@@ -1,0 +1,71 @@
+{
+  "id": "plugin-mongodb",
+  "displayName": "Mongo DB",
+  "description": "Plugin which connects to Mongo DB",
+  "apiVersion": "2",
+  "versionDescription": "Version 2",
+  "version": "1.0.0",
+  "iconFile": "icon.png",
+  "executable": "PluginMongoDB",
+  "kind": "publisher",
+  "os": "$GOOS",
+  "arch": "$GOARCH",
+  "accessGroups": [],
+  "canConfigure": true,
+  "canProduceMultipleSchemas": true,
+  "canAcceptQueryBasedSchemas": false, 
+  "canUseOAuth": false,
+  "canConfigureWrite": false,
+  "canWrite": false,
+  "canConfigureReplication": true,
+  "canWriteReplication": true,
+  "querySchema": {
+    "ui": {
+      "ui:widget": "code",
+      "ui:options": {
+        "language": "sql"
+      }
+    },
+    "schema": {
+      "type": "string"
+    }
+  },
+  "configSchema": {
+    "ui": {
+      "ui:order": [
+        "ConnectionString",
+        "DefaultDatabase",
+        "NestedObjectDepth"
+      ],
+      "ConnectionString": 
+      {
+        "ui:widget": "password"
+      }
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "ConnectionString" : {
+          "type": "string",
+          "title": "Connection String",
+          "description": "The connection string of the Mongo server"
+        },
+        "DefaultDatabase": {
+          "type": "string",
+          "title": "Default Database",
+          "description": "Database to be used as default for the Mongo server"
+        },
+          "NestedObjectDepth": {
+          "type": "string", 
+            "title": "Nested Object Depth",
+            "description": "Depth of nested Mongo records to flatten into AuGR records"
+        }
+      },
+      "required": [
+        "ConnectionString",
+        "DefaultDatabase",
+        "NestedObjectDepth"
+      ]
+    }
+  }
+}
