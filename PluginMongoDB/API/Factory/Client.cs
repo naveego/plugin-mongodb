@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Google.Apis.Auth.OAuth2;
-using Google.Cloud.BigQuery.V2;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using PluginBigQuery.Helper;
@@ -47,17 +45,6 @@ namespace PluginBigQuery.API.Factory
             return _client.ListDatabases();
         }
         
-        public async Task<BigQueryResults> ExecuteReaderAsync(string query)
-        {
-            throw new NotImplementedException();
-            // return await _client.ExecuteQueryAsync(query, parameters: null);
-        }
-        
-        public async Task<BigQueryResults> ExecuteReaderAsync(string query, IEnumerable<BigQueryParameter> parameters)
-        {
-            throw new NotImplementedException();
-            // return await _client.ExecuteQueryAsync(query, parameters);
-        }
         
         public async Task<bool> PingAsync()
         {

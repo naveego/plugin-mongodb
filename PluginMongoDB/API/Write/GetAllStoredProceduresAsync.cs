@@ -19,32 +19,7 @@ WHERE ROUTINE_TYPE = 'PROCEDURE' AND ROUTINE_SCHEMA != 'sys'";
 
         public static async Task<List<WriteStoredProcedure>> GetAllStoredProceduresAsync(IClientFactory clientFactory)
         {
-            var storedProcedures = new List<WriteStoredProcedure>();
-            var client = clientFactory.GetClient();
-
-            try
-            {
-                var results = await client.ExecuteReaderAsync(String.Format(GetAllStoredProceduresQuery, 
-                                                                                    client.GetDefaultDatabase()));
-
-
-                foreach (var row in results)
-                {
-                    var storedProcedure = new WriteStoredProcedure()
-                    {
-                        SchemaName = row[SchemaName].ToString(),
-                        RoutineName = row[RoutineName].ToString(),
-                        SpecificName = row[SpecificName].ToString()
-                    };
-
-                    storedProcedures.Add(storedProcedure);
-                }
-            }
-            catch
-            {
-            }
-
-            return storedProcedures;
+            throw new NotImplementedException();
         }
     }
 }

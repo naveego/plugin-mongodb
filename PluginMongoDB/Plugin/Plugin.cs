@@ -63,7 +63,7 @@ namespace PluginBigQuery.Plugin
         }
 
         /// <summary>
-        /// Establishes a connection with Google Big Query.
+        /// Establishes a connection with Mongo.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="context"></param>
@@ -314,7 +314,7 @@ namespace PluginBigQuery.Plugin
         }
 
         /// <summary>
-        /// Configures replication writebacks to Google Big Query
+        /// Configures replication writebacks to Mongo
         /// </summary>
         /// <param name="request"></param>
         /// <param name="context"></param>
@@ -369,7 +369,7 @@ namespace PluginBigQuery.Plugin
         }
 
         /// <summary>
-        /// Prepares writeback settings to write to Google Big Query
+        /// Prepares writeback settings to write to Mongo
         /// </summary>
         /// <param name="request"></param>
         /// <param name="context"></param>
@@ -415,7 +415,7 @@ namespace PluginBigQuery.Plugin
         }
 
         /// <summary>
-        /// Writes records to Google Big Query
+        /// Writes records to Mongo
         /// </summary>
         /// <param name="requestStream"></param>
         /// <param name="responseStream"></param>
@@ -465,7 +465,7 @@ namespace PluginBigQuery.Plugin
                     }
                 }
             
-                Logger.Info($"Wrote {inCount} records to Google Big Query.");
+                Logger.Info($"Wrote {inCount} records to Mongo.");
             }
             catch (Exception e)
             {

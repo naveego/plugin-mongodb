@@ -16,13 +16,13 @@ namespace PluginBigQuery.API.Replication
                     {
                         {"type", "string"},
                         {"title", "Golden Record Table Name"},
-                        {"description", "Name for your golden record table in Google Big Query"},
+                        {"description", "Name for your golden record table in Mongo"},
                     }},
                     {"VersionTableName", new Dictionary<string, string>
                     {
                         {"type", "string"},
                         {"title", "Version Record Table Name"},
-                        {"description", "Name for your version record table in Google Big Query"},
+                        {"description", "Name for your version record table in Mongo"},
                     }},
                 }},
                 {"required", new []
